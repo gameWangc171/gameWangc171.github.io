@@ -70,7 +70,7 @@ window.boot = function () {
                     cc.director.runSceneImmediate(scene);
                     if (cc.sys.isBrowser) {
                         // show canvas
-                        var GameBG = document.getElementById('GameBG');
+                        var GameBG = document.getElementById('GameBg');
                         GameBG.style.display = 'none';
                         var canvas = document.getElementById('GameCanvas');
                         canvas.style.visibility = '';
