@@ -10377,7 +10377,7 @@ window.__require = function e(t, n, r) {
       iceRandom: .5,
       drinkTime: 5
     };
-    GlobalData.forceUpdateTable = true;
+    GlobalData.forceUpdateTable = false;
     GlobalData.tableData = [];
     GlobalData.encrypKey = "xyylyyrmm1htlhyl";
     GlobalData.encrypIv = "bkwzsyzy2qcywwbd";
@@ -19491,14 +19491,10 @@ window.__require = function e(t, n, r) {
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
-    exports.ECloseType = exports.EPriority = exports.GetForm = exports.ModalType = void 0;
-    var SysDefine_1 = require("./config/SysDefine");
-    var ModalType = function() {
-      function ModalType(opacity, ClickMaskClose, IsEasing, EasingTime) {
-        void 0 === opacity && (opacity = SysDefine_1.ModalOpacity.OpacityHalf);
-        void 0 === ClickMaskClose && (ClickMaskClose = false);
-        void 0 === IsEasing && (IsEasing = true);
-        void 0 === EasingTime && (EasingTime = .2);
+    exports.EOpenType = exports.ECloseType = exports.EPriority = exports.GetForm = exports.ModalType = void 0;
+    const SysDefine_1 = require("./config/SysDefine");
+    class ModalType {
+      constructor(opacity = SysDefine_1.ModalOpacity.OpacityHalf, ClickMaskClose = false, IsEasing = true, EasingTime = .2) {
         this.opacity = SysDefine_1.ModalOpacity.OpacityHalf;
         this.clickMaskClose = false;
         this.isEasing = true;
@@ -19509,15 +19505,13 @@ window.__require = function e(t, n, r) {
         this.isEasing = IsEasing;
         this.easingTime = EasingTime;
       }
-      ModalType.prototype.useBlur = function() {
+      useBlur() {
         this.dualBlur = true;
         return this;
-      };
-      return ModalType;
-    }();
+      }
+    }
     exports.ModalType = ModalType;
-    function GetForm(form, type) {
-      void 0 === type && (type = SysDefine_1.FormType.Screen);
+    function GetForm(form, type = SysDefine_1.FormType.Screen) {
       if ("string" === typeof form) return {
         prefabUrl: form,
         type: type
@@ -19544,6 +19538,12 @@ window.__require = function e(t, n, r) {
       ECloseType[ECloseType["CloseAndDestory"] = 1] = "CloseAndDestory";
       ECloseType[ECloseType["LRU"] = 2] = "LRU";
     })(ECloseType = exports.ECloseType || (exports.ECloseType = {}));
+    var EOpenType;
+    (function(EOpenType) {
+      EOpenType[EOpenType["OpenOnly"] = 0] = "OpenOnly";
+      EOpenType[EOpenType["OpenOnlyTp"] = 1] = "OpenOnlyTp";
+      EOpenType[EOpenType["OpenDefault"] = 2] = "OpenDefault";
+    })(EOpenType = exports.EOpenType || (exports.EOpenType = {}));
     cc._RF.pop();
   }, {
     "./config/SysDefine": "SysDefine"
@@ -20860,6 +20860,7 @@ window.__require = function e(t, n, r) {
         this.formData = null;
         this.formType = null;
         this.closeType = null;
+        this.openType = Struct_1.EOpenType.OpenDefault;
         this._inited = false;
         this.view = null;
         this.model = null;
@@ -21350,6 +21351,7 @@ window.__require = function e(t, n, r) {
         this.formType = SysDefine_1.FormType.Window;
         this.modalType = new Struct_1.ModalType(SysDefine_1.ModalOpacity.OpacityFull);
         this.closeType = Struct_1.ECloseType.LRU;
+        this.openTyp = Struct_1.EOpenType.OpenOnlyTp;
       }
       showEffect() {
         return __awaiter(this, void 0, void 0, function*() {
@@ -21367,6 +21369,7 @@ window.__require = function e(t, n, r) {
         this.formType = SysDefine_1.FormType.Drawer;
         this.modalType = new Struct_1.ModalType(SysDefine_1.ModalOpacity.OpacityFull);
         this.closeType = Struct_1.ECloseType.CloseAndHide;
+        this.openTyp = Struct_1.EOpenType.OpenOnlyTp;
       }
       showEffect() {
         return __awaiter(this, void 0, void 0, function*() {
