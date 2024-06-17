@@ -1,1 +1,137 @@
-[1,["fdO0bFfTRJJZ7rKQcMUKoY","c3HF+WY/FMp4wlUD+dLWhP","calGDTeX5Gt7gL98K8AjVg"],["_textureSetter"],["cc.SpriteFrame"],0,[[[{"name":"btn_backpack","rect":[2,0,141,128],"offset":[1,0.5],"originalSize":[143,129],"capInsets":[0,0,0,0]}],[0],0,[0],[0],[0]],[[{"name":"bg_top","rect":[0,0,2,2],"offset":[0,0],"originalSize":[2,2],"capInsets":[0,0,0,0]}],[0],0,[0],[0],[1]],[[{"name":"btn_recipe","rect":[0,0,126,126],"offset":[0,0],"originalSize":[126,126],"capInsets":[0,0,0,0]}],[0],0,[0],[0],[2]]]]
+[
+  1,
+  [
+    "fdO0bFfTRJJZ7rKQcMUKoY",
+    "c3HF+WY/FMp4wlUD+dLWhP",
+    "calGDTeX5Gt7gL98K8AjVg"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    [
+      [
+        {
+          "name": "btn_backpack",
+          "rect": [
+            2,
+            0,
+            141,
+            128
+          ],
+          "offset": [
+            1,
+            0.5
+          ],
+          "originalSize": [
+            143,
+            129
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    [
+      [
+        {
+          "name": "bg_top",
+          "rect": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            2,
+            2
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ]
+    ],
+    [
+      [
+        {
+          "name": "btn_recipe",
+          "rect": [
+            0,
+            0,
+            126,
+            126
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            126,
+            126
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        2
+      ]
+    ]
+  ]
+]

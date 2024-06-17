@@ -1,1 +1,51 @@
-[1,["76Ctbg9j5MppKYMSmlr0qL"],["_textureSetter"],["cc.SpriteFrame"],0,[{"name":"idle1_1","rect":[34,21,113,135],"offset":[10.5,-8.5],"originalSize":[160,160],"capInsets":[0,0,0,0]}],[0],0,[0],[0],[0]]
+[
+  1,
+  [
+    "76Ctbg9j5MppKYMSmlr0qL"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    {
+      "name": "idle1_1",
+      "rect": [
+        34,
+        21,
+        113,
+        135
+      ],
+      "offset": [
+        10.5,
+        -8.5
+      ],
+      "originalSize": [
+        160,
+        160
+      ],
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  [
+    0
+  ],
+  0,
+  [
+    0
+  ],
+  [
+    0
+  ],
+  [
+    0
+  ]
+]

@@ -1,1 +1,51 @@
-[1,["fbbaX3iYVE4rY4/uMwGDEW"],["_textureSetter"],["cc.SpriteFrame"],0,[{"name":"glass30","rect":[77,108,84,60],"offset":[4,-23],"originalSize":[230,230],"capInsets":[0,0,0,0]}],[0],0,[0],[0],[0]]
+[
+  1,
+  [
+    "fbbaX3iYVE4rY4/uMwGDEW"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    {
+      "name": "glass30",
+      "rect": [
+        77,
+        108,
+        84,
+        60
+      ],
+      "offset": [
+        4,
+        -23
+      ],
+      "originalSize": [
+        230,
+        230
+      ],
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  [
+    0
+  ],
+  0,
+  [
+    0
+  ],
+  [
+    0
+  ],
+  [
+    0
+  ]
+]

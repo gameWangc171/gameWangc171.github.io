@@ -1,1 +1,96 @@
-[1,["b8Bc/5S1NN97JXj1sDgo0q","30E5IrP5BCk7bnGCoNLgNa"],["_textureSetter"],["cc.SpriteFrame"],0,[[[{"name":"bar","rect":[0,0,37,506],"offset":[0,0.5],"originalSize":[37,507],"capInsets":[0,0,0,0]}],[0],0,[0],[0],[0]],[[{"name":"bottom","rect":[0,0,750,252],"offset":[0,0],"originalSize":[750,252],"capInsets":[0,0,0,0]}],[0],0,[0],[0],[1]]]]
+[
+  1,
+  [
+    "b8Bc/5S1NN97JXj1sDgo0q",
+    "30E5IrP5BCk7bnGCoNLgNa"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    [
+      [
+        {
+          "name": "bar",
+          "rect": [
+            0,
+            0,
+            37,
+            506
+          ],
+          "offset": [
+            0,
+            0.5
+          ],
+          "originalSize": [
+            37,
+            507
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    [
+      [
+        {
+          "name": "bottom",
+          "rect": [
+            0,
+            0,
+            750,
+            252
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            750,
+            252
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ]
+    ]
+  ]
+]

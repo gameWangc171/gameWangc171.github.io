@@ -1,1 +1,51 @@
-[1,["b3/OlrWztM4rcgHRFgaAxs"],["_textureSetter"],["cc.SpriteFrame"],0,[{"name":"coffe1","rect":[53,61,129,149],"offset":[2.5,-20.5],"originalSize":[230,230],"capInsets":[0,0,0,0]}],[0],0,[0],[0],[0]]
+[
+  1,
+  [
+    "b3/OlrWztM4rcgHRFgaAxs"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    {
+      "name": "coffe1",
+      "rect": [
+        53,
+        61,
+        129,
+        149
+      ],
+      "offset": [
+        2.5,
+        -20.5
+      ],
+      "originalSize": [
+        230,
+        230
+      ],
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  [
+    0
+  ],
+  0,
+  [
+    0
+  ],
+  [
+    0
+  ],
+  [
+    0
+  ]
+]
