@@ -5030,6 +5030,7 @@ window.__require = function e(t, n, r) {
         item.getComponent(BackpackItem_1.default).initUi(RawMaterial_1.BackpackList[this.curModuleNum][this.curTypeNum][idx], idx, this);
         let self = this;
         this.scheduleOnce(() => {
+          self.content.y = 0;
           self.node.height = self.content.height;
         });
       }
@@ -10376,7 +10377,7 @@ window.__require = function e(t, n, r) {
       iceRandom: .5,
       drinkTime: 5
     };
-    GlobalData.forceUpdateTable = false;
+    GlobalData.forceUpdateTable = true;
     GlobalData.tableData = [];
     GlobalData.encrypKey = "xyylyyrmm1htlhyl";
     GlobalData.encrypIv = "bkwzsyzy2qcywwbd";
@@ -20710,6 +20711,7 @@ window.__require = function e(t, n, r) {
         this.curTypeNumber = 0;
         this.nodeHeight = [ 110, 130 ];
         this.titlePos = [ -50, -60 ];
+        this.initBackpackContentHeight = 0;
       }
       start() {
         console.log("UIBackpack start...");
@@ -20723,6 +20725,7 @@ window.__require = function e(t, n, r) {
       onAfterShow(params) {
         let self = this;
         this.view.BackpackScroll.numItems = RawMaterial_1.BackpackList[this.curModuleNumber].length;
+        this.initBackpackContentHeight = this.view.BackpackContent.children[0].height;
         this.view.BackpackScroll.scrollTo(0, 0, .1);
         this.view.BackpackContent.getComponent(cc.Layout).enabled = true;
         this.scheduleOnce(() => {
@@ -20767,6 +20770,7 @@ window.__require = function e(t, n, r) {
       }
       changeRecipeItem() {
         this.view.BackpackScroll.numItems = RawMaterial_1.BackpackList[this.curModuleNumber].length;
+        for (let i = 0; i < RawMaterial_1.BackpackList[this.curModuleNumber].length; i++) this.view.BackpackContent.children[i].height = this.initBackpackContentHeight;
         this.view.BackpackScroll.updateAll();
       }
       initTypeItem() {
@@ -23782,7 +23786,7 @@ window.__require = function e(t, n, r) {
           this.userData["loginTime"] = new Date();
           this.userData["isUpdateVarietyCount"] = -1;
         }
-        this.compareTime(this.userData["loginTime"]);
+        this.compareTime(new Date(Date.parse(this.userData["loginTime"])));
         Game_1.default.dbMgr.update(TableKey_1.TableKey.USER, {
           loginTime: this.userData["loginTime"]
         }, {
@@ -23795,7 +23799,7 @@ window.__require = function e(t, n, r) {
         return midnight.getTime() === previousMidnight.getTime();
       }
       compareTime(curTime) {
-        this.isDay = this.isSameDay(new Date(), this.userData["loginTime"]);
+        this.isDay = this.isSameDay(new Date(), curTime);
         this.isDay || (this.userData["isUpdateVarietyCount"] = -1);
         const tempTime = new Date();
         for (let i = 0; i < this.updateTimeArr.length; i++) {
