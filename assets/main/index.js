@@ -14383,25 +14383,6 @@ window.__require = function e(t, n, r) {
     "use strict";
     cc._RF.push(module, "6c4f4bdEj1Ng5N+KJWsftEv", "ModalMgr1");
     "use strict";
-    var __extends = this && this.__extends || function() {
-      var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf || {
-          __proto__: []
-        } instanceof Array && function(d, b) {
-          d.__proto__ = b;
-        } || function(d, b) {
-          for (var p in b) Object.prototype.hasOwnProperty.call(b, p) && (d[p] = b[p]);
-        };
-        return extendStatics(d, b);
-      };
-      return function(d, b) {
-        extendStatics(d, b);
-        function __() {
-          this.constructor = d;
-        }
-        d.prototype = null === b ? Object.create(b) : (__.prototype = b.prototype, new __());
-      };
-    }();
     var __decorate = this && this.__decorate || function(decorators, target, key, desc) {
       var c = arguments.length, r = c < 3 ? target : null === desc ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
       if ("object" === typeof Reflect && "function" === typeof Reflect.decorate) r = Reflect.decorate(decorators, target, key, desc); else for (var i = decorators.length - 1; i >= 0; i--) (d = decorators[i]) && (r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r);
@@ -14434,159 +14415,54 @@ window.__require = function e(t, n, r) {
         step((generator = generator.apply(thisArg, _arguments || [])).next());
       });
     };
-    var __generator = this && this.__generator || function(thisArg, body) {
-      var _ = {
-        label: 0,
-        sent: function() {
-          if (1 & t[0]) throw t[1];
-          return t[1];
-        },
-        trys: [],
-        ops: []
-      }, f, y, t, g;
-      return g = {
-        next: verb(0),
-        throw: verb(1),
-        return: verb(2)
-      }, "function" === typeof Symbol && (g[Symbol.iterator] = function() {
-        return this;
-      }), g;
-      function verb(n) {
-        return function(v) {
-          return step([ n, v ]);
-        };
-      }
-      function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-          if (f = 1, y && (t = 2 & op[0] ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 
-          0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-          (y = 0, t) && (op = [ 2 & op[0], t.value ]);
-          switch (op[0]) {
-           case 0:
-           case 1:
-            t = op;
-            break;
-
-           case 4:
-            _.label++;
-            return {
-              value: op[1],
-              done: false
-            };
-
-           case 5:
-            _.label++;
-            y = op[1];
-            op = [ 0 ];
-            continue;
-
-           case 7:
-            op = _.ops.pop();
-            _.trys.pop();
-            continue;
-
-           default:
-            if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (6 === op[0] || 2 === op[0])) {
-              _ = 0;
-              continue;
-            }
-            if (3 === op[0] && (!t || op[1] > t[0] && op[1] < t[3])) {
-              _.label = op[1];
-              break;
-            }
-            if (6 === op[0] && _.label < t[1]) {
-              _.label = t[1];
-              t = op;
-              break;
-            }
-            if (t && _.label < t[2]) {
-              _.label = t[2];
-              _.ops.push(op);
-              break;
-            }
-            t[2] && _.ops.pop();
-            _.trys.pop();
-            continue;
-          }
-          op = body.call(thisArg, _);
-        } catch (e) {
-          op = [ 6, e ];
-          y = 0;
-        } finally {
-          f = t = 0;
-        }
-        if (5 & op[0]) throw op[1];
-        return {
-          value: op[0] ? op[1] : void 0,
-          done: true
-        };
-      }
-    };
+    var ModalMgr1_1;
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
-    var UIModalScript_1 = require("./UIModalScript");
-    var SysDefine_1 = require("./config/SysDefine");
-    var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-    var ModalMgr1 = function(_super) {
-      __extends(ModalMgr1, _super);
-      function ModalMgr1() {
-        var _this = null !== _super && _super.apply(this, arguments) || this;
-        _this.uiModal = null;
-        return _this;
+    const UIModalScript_1 = require("./UIModalScript");
+    const SysDefine_1 = require("./config/SysDefine");
+    const {ccclass: ccclass, property: property} = cc._decorator;
+    let ModalMgr1 = ModalMgr1_1 = class ModalMgr1 extends cc.Component {
+      constructor() {
+        super(...arguments);
+        this.uiModal = null;
       }
-      ModalMgr1_1 = ModalMgr1;
-      Object.defineProperty(ModalMgr1, "inst", {
-        get: function() {
-          if (null == this._inst) {
-            this._inst = new ModalMgr1_1();
-            var node = new cc.Node("UIModalNode");
-            ModalMgr1_1.popUpRoot = SysDefine_1.SysDefine.SYS_UIROOT_NAME + "/" + SysDefine_1.SysDefine.SYS_DRAWER_NODE;
-            var rootNode = cc.find(ModalMgr1_1.popUpRoot);
-            rootNode.addChild(node);
-            this._inst.uiModal = node.addComponent(UIModalScript_1.default);
-            this._inst.uiModal.init();
-          }
-          return this._inst;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      ModalMgr1.prototype.showModal = function(maskType) {
-        return __awaiter(this, void 0, void 0, function() {
-          return __generator(this, function(_a) {
-            switch (_a.label) {
-             case 0:
-              return [ 4, this.uiModal.showModal(maskType.opacity, maskType.easingTime, maskType.isEasing, maskType.dualBlur) ];
-
-             case 1:
-              _a.sent();
-              return [ 2 ];
-            }
-          });
+      static get inst() {
+        if (null == this._inst) {
+          this._inst = new ModalMgr1_1();
+          let node = new cc.Node("UIModalNode");
+          node.pauseSystemEvents(true);
+          ModalMgr1_1.popUpRoot = SysDefine_1.SysDefine.SYS_UIROOT_NAME + "/" + SysDefine_1.SysDefine.SYS_DRAWER_NODE;
+          let rootNode = cc.find(ModalMgr1_1.popUpRoot);
+          rootNode.addChild(node);
+          this._inst.uiModal = node.addComponent(UIModalScript_1.default);
+          this._inst.uiModal.init();
+        }
+        return this._inst;
+      }
+      showModal(maskType) {
+        return __awaiter(this, void 0, void 0, function*() {
+          yield this.uiModal.showModal(maskType.opacity, maskType.easingTime, maskType.isEasing, maskType.dualBlur);
         });
-      };
-      ModalMgr1.prototype.checkModalWindow = function(coms) {
+      }
+      checkModalWindow(coms) {
         if (coms.length <= 0) {
           this.uiModal.node.active = false;
           return;
         }
         this.uiModal.node.active = true;
         this.uiModal.node.parent && this.uiModal.node.removeFromParent();
-        for (var i = coms.length - 1; i >= 0; i--) if (coms[i].modalType.opacity > 0) {
+        for (let i = coms.length - 1; i >= 0; i--) if (coms[i].modalType.opacity > 0) {
           cc.find(ModalMgr1_1.popUpRoot).addChild(this.uiModal.node, Math.max(coms[i].node.zIndex - 1, 0));
           this.uiModal.fid = coms[i].fid;
           this.showModal(coms[i].modalType);
           break;
         }
-      };
-      var ModalMgr1_1;
-      ModalMgr1.popUpRoot = "";
-      ModalMgr1._inst = null;
-      ModalMgr1 = ModalMgr1_1 = __decorate([ ccclass ], ModalMgr1);
-      return ModalMgr1;
-    }(cc.Component);
+      }
+    };
+    ModalMgr1.popUpRoot = "";
+    ModalMgr1._inst = null;
+    ModalMgr1 = ModalMgr1_1 = __decorate([ ccclass ], ModalMgr1);
     exports.default = ModalMgr1;
     cc._RF.pop();
   }, {
@@ -14597,25 +14473,6 @@ window.__require = function e(t, n, r) {
     "use strict";
     cc._RF.push(module, "9b75bodHflDGK6GhPrmOvTs", "ModalMgr");
     "use strict";
-    var __extends = this && this.__extends || function() {
-      var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf || {
-          __proto__: []
-        } instanceof Array && function(d, b) {
-          d.__proto__ = b;
-        } || function(d, b) {
-          for (var p in b) Object.prototype.hasOwnProperty.call(b, p) && (d[p] = b[p]);
-        };
-        return extendStatics(d, b);
-      };
-      return function(d, b) {
-        extendStatics(d, b);
-        function __() {
-          this.constructor = d;
-        }
-        d.prototype = null === b ? Object.create(b) : (__.prototype = b.prototype, new __());
-      };
-    }();
     var __decorate = this && this.__decorate || function(decorators, target, key, desc) {
       var c = arguments.length, r = c < 3 ? target : null === desc ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
       if ("object" === typeof Reflect && "function" === typeof Reflect.decorate) r = Reflect.decorate(decorators, target, key, desc); else for (var i = decorators.length - 1; i >= 0; i--) (d = decorators[i]) && (r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r);
@@ -14648,159 +14505,53 @@ window.__require = function e(t, n, r) {
         step((generator = generator.apply(thisArg, _arguments || [])).next());
       });
     };
-    var __generator = this && this.__generator || function(thisArg, body) {
-      var _ = {
-        label: 0,
-        sent: function() {
-          if (1 & t[0]) throw t[1];
-          return t[1];
-        },
-        trys: [],
-        ops: []
-      }, f, y, t, g;
-      return g = {
-        next: verb(0),
-        throw: verb(1),
-        return: verb(2)
-      }, "function" === typeof Symbol && (g[Symbol.iterator] = function() {
-        return this;
-      }), g;
-      function verb(n) {
-        return function(v) {
-          return step([ n, v ]);
-        };
-      }
-      function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-          if (f = 1, y && (t = 2 & op[0] ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 
-          0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-          (y = 0, t) && (op = [ 2 & op[0], t.value ]);
-          switch (op[0]) {
-           case 0:
-           case 1:
-            t = op;
-            break;
-
-           case 4:
-            _.label++;
-            return {
-              value: op[1],
-              done: false
-            };
-
-           case 5:
-            _.label++;
-            y = op[1];
-            op = [ 0 ];
-            continue;
-
-           case 7:
-            op = _.ops.pop();
-            _.trys.pop();
-            continue;
-
-           default:
-            if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (6 === op[0] || 2 === op[0])) {
-              _ = 0;
-              continue;
-            }
-            if (3 === op[0] && (!t || op[1] > t[0] && op[1] < t[3])) {
-              _.label = op[1];
-              break;
-            }
-            if (6 === op[0] && _.label < t[1]) {
-              _.label = t[1];
-              t = op;
-              break;
-            }
-            if (t && _.label < t[2]) {
-              _.label = t[2];
-              _.ops.push(op);
-              break;
-            }
-            t[2] && _.ops.pop();
-            _.trys.pop();
-            continue;
-          }
-          op = body.call(thisArg, _);
-        } catch (e) {
-          op = [ 6, e ];
-          y = 0;
-        } finally {
-          f = t = 0;
-        }
-        if (5 & op[0]) throw op[1];
-        return {
-          value: op[0] ? op[1] : void 0,
-          done: true
-        };
-      }
-    };
+    var ModalMgr_1;
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
-    var UIModalScript_1 = require("./UIModalScript");
-    var SysDefine_1 = require("./config/SysDefine");
-    var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-    var ModalMgr = function(_super) {
-      __extends(ModalMgr, _super);
-      function ModalMgr() {
-        var _this = null !== _super && _super.apply(this, arguments) || this;
-        _this.uiModal = null;
-        return _this;
+    const UIModalScript_1 = require("./UIModalScript");
+    const SysDefine_1 = require("./config/SysDefine");
+    const {ccclass: ccclass, property: property} = cc._decorator;
+    let ModalMgr = ModalMgr_1 = class ModalMgr extends cc.Component {
+      constructor() {
+        super(...arguments);
+        this.uiModal = null;
       }
-      ModalMgr_1 = ModalMgr;
-      Object.defineProperty(ModalMgr, "inst", {
-        get: function() {
-          if (null == this._inst) {
-            this._inst = new ModalMgr_1();
-            var node = new cc.Node("UIModalNode");
-            ModalMgr_1.popUpRoot = SysDefine_1.SysDefine.SYS_UIROOT_NAME + "/" + SysDefine_1.SysDefine.SYS_POPUP_NODE;
-            var rootNode = cc.find(ModalMgr_1.popUpRoot);
-            rootNode.addChild(node);
-            this._inst.uiModal = node.addComponent(UIModalScript_1.default);
-            this._inst.uiModal.init();
-          }
-          return this._inst;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      ModalMgr.prototype.showModal = function(maskType) {
-        return __awaiter(this, void 0, void 0, function() {
-          return __generator(this, function(_a) {
-            switch (_a.label) {
-             case 0:
-              return [ 4, this.uiModal.showModal(maskType.opacity, maskType.easingTime, maskType.isEasing, maskType.dualBlur) ];
-
-             case 1:
-              _a.sent();
-              return [ 2 ];
-            }
-          });
+      static get inst() {
+        if (null == this._inst) {
+          this._inst = new ModalMgr_1();
+          let node = new cc.Node("UIModalNode");
+          ModalMgr_1.popUpRoot = SysDefine_1.SysDefine.SYS_UIROOT_NAME + "/" + SysDefine_1.SysDefine.SYS_POPUP_NODE;
+          let rootNode = cc.find(ModalMgr_1.popUpRoot);
+          rootNode.addChild(node);
+          this._inst.uiModal = node.addComponent(UIModalScript_1.default);
+          this._inst.uiModal.init();
+        }
+        return this._inst;
+      }
+      showModal(maskType) {
+        return __awaiter(this, void 0, void 0, function*() {
+          yield this.uiModal.showModal(maskType.opacity, maskType.easingTime, maskType.isEasing, maskType.dualBlur);
         });
-      };
-      ModalMgr.prototype.checkModalWindow = function(coms) {
+      }
+      checkModalWindow(coms) {
         if (coms.length <= 0) {
           this.uiModal.node.active = false;
           return;
         }
         this.uiModal.node.active = true;
         this.uiModal.node.parent && this.uiModal.node.removeFromParent();
-        for (var i = coms.length - 1; i >= 0; i--) if (coms[i].modalType.opacity > 0) {
+        for (let i = coms.length - 1; i >= 0; i--) if (coms[i].modalType.opacity > 0) {
           cc.find(ModalMgr_1.popUpRoot).addChild(this.uiModal.node, Math.max(coms[i].node.zIndex - 1, 0));
           this.uiModal.fid = coms[i].fid;
           this.showModal(coms[i].modalType);
           break;
         }
-      };
-      var ModalMgr_1;
-      ModalMgr.popUpRoot = "";
-      ModalMgr._inst = null;
-      ModalMgr = ModalMgr_1 = __decorate([ ccclass ], ModalMgr);
-      return ModalMgr;
-    }(cc.Component);
+      }
+    };
+    ModalMgr.popUpRoot = "";
+    ModalMgr._inst = null;
+    ModalMgr = ModalMgr_1 = __decorate([ ccclass ], ModalMgr);
     exports.default = ModalMgr;
     cc._RF.pop();
   }, {
@@ -16217,58 +15968,218 @@ window.__require = function e(t, n, r) {
       ID: 2001,
       name: "\u6c34",
       price: 0,
-      intro: "\u4e00\u4efd\u7eaf\u51c0\u6c34\uff0c\u4e07\u7269\u7684\u8d77\u6e90,\u4e0d\u53ef\u51fa\u552e",
+      intro: "\u4e00\u4efd\u7eaf\u51c0\u6c34\uff0c\u4e07\u7269\u7684\u8d77\u6e90\n\u4e0d\u53ef\u51fa\u552e",
       type: "item_raw",
-      sell: 0
+      sell: 0,
+      count: 3,
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      resPath: "img/raw/",
+      tagPrice: 2,
+      ROI: "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": ""
     }, {
       ID: 2002,
       name: "\u5496\u5561\u8c46",
       price: 0,
-      intro: "\u70d8\u7119\u597d\u7684\u5496\u5561\u8c46,\u4e0d\u53ef\u51fa\u552e",
+      intro: "\u70d8\u7119\u597d\u7684\u5496\u5561\u8c46\n\u4e0d\u53ef\u51fa\u552e",
       type: "item_raw",
-      sell: 0
+      sell: 0,
+      count: 3,
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      resPath: "img/raw/",
+      tagPrice: 3,
+      ROI: "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": ""
     }, {
       ID: 2003,
       name: "\u51b0",
       price: 0,
-      intro: "\u628a\u90a3\u4e2a\u7eaf\u51c0\u6c34\u653e\u8fdb\u5236\u51b0\u673a\u91cc\u5f97\u6765\u7684,\u4e0d\u53ef\u51fa\u552e",
+      intro: "\u628a\u90a3\u4e2a\u7eaf\u51c0\u6c34\u653e\u8fdb\u5236\u51b0\u673a\u91cc\u5f97\u6765\u7684\n\u4e0d\u53ef\u51fa\u552e",
       type: "item_raw",
-      sell: 0
+      sell: 0,
+      count: 3,
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      resPath: "img/raw/",
+      tagPrice: 1,
+      ROI: "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": ""
     }, {
       ID: 2004,
       name: "\u725b\u5976",
       price: 20,
-      intro: "\u7eaf\u725b\u5976\uff0c\u7edd\u5bf9\u6ca1\u6709\u4efb\u4f55\u6dfb\u52a0\uff0c\u4f60\u9700\u8981\u5c3d\u5feb\u4f7f\u7528,\u4e0d\uff01\u7136\uff01\u5c31\uff01\u4f1a\uff01\u574f\uff01\u6389\uff01,\u4e0d\u53ef\u51fa\u552e",
+      intro: "\u7eaf\u725b\u5976\uff0c\u7edd\u5bf9\u6ca1\u6709\u4efb\u4f55\u6dfb\u52a0\uff0c\u4f60\u9700\u8981\u5c3d\u5feb\u4f7f\u7528\n\u4e0d\uff01\u7136\uff01\u5c31\uff01\u4f1a\uff01\u574f\uff01\u6389\uff01\n\u4e0d\u53ef\u51fa\u552e",
       type: "item_raw",
-      sell: 0
+      sell: 0,
+      count: 3,
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      resPath: "img/raw/",
+      tagPrice: 1,
+      ROI: .05,
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": ""
     }, {
       ID: 2005,
       name: "\u5de7\u514b\u529b",
       price: 50,
-      intro: "\u7eaf\u53ef\u53ef\u8102\u7684\u5de7\u514b\u529b\uff0c\u5077\u5403\u4e00\u70b9\u6ca1\u4eba\u53d1\u73b0\u5427\uff1f\u4e0d\u53ef\u51fa\u552e",
+      intro: "\u7eaf\u53ef\u53ef\u8102\u7684\u5de7\u514b\u529b\uff0c\u5077\u5403\u4e00\u70b9\u6ca1\u4eba\u53d1\u73b0\u5427\uff1f\n\u4e0d\u53ef\u51fa\u552e",
       type: "item_raw",
-      sell: 0
+      sell: 0,
+      count: 3,
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      resPath: "img/raw/",
+      tagPrice: 3,
+      ROI: .06,
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": ""
     }, {
       ID: 2006,
       name: "\u6930\u5b50",
       price: 80,
-      intro: "\u80af\u5b9a\u662f\u4ece\u5f88\u70ed\u7684\u5730\u65b9\u8fd0\u8fc7\u6765\u7684\uff0c\u4e0a\u9762\u8fd8\u6709\u9633\u5149\u548c\u6d77\u5cb8\u7ebf\u5347\u8d77\u7684\u5473\u9053,\u4e0d\u53ef\u51fa\u552e",
+      intro: "\u80af\u5b9a\u662f\u4ece\u5f88\u70ed\u7684\u5730\u65b9\u8fd0\u8fc7\u6765\u7684\uff0c\u4e0a\u9762\u8fd8\u6709\u9633\u5149\u548c\u6d77\u5cb8\u7ebf\u5347\u8d77\u7684\u5473\u9053\n\u4e0d\u53ef\u51fa\u552e",
       type: "item_raw",
-      sell: 0
+      sell: 0,
+      count: 3,
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      resPath: "img/raw/",
+      tagPrice: 4,
+      ROI: .05,
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": ""
     }, {
       ID: 2007,
       name: "\u5976\u6cb9\u74f6",
       price: 150,
-      intro: "\u4e00\u74f6\u55b5\u9020\u690d\u7269\u5976\u6cb9,\u4e0d\u53ef\u51fa\u552e",
+      intro: "\u4e00\u74f6\u55b5\u9020\u690d\u7269\u5976\u6cb9\n\u4e0d\u53ef\u51fa\u552e",
       type: "item_raw",
-      sell: 0
+      sell: 0,
+      count: 3,
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      resPath: "img/raw/",
+      tagPrice: 7,
+      ROI: .046666667,
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": ""
     }, {
       ID: 2008,
       name: "\u7126\u7cd6",
       price: 130,
-      intro: "\u767d\u7802\u7cd6\u71ac\u716e\u540e\u7126\u5316\u7684\u996e\u6599\u8c03\u5473\u54c1\uff0c\u5f88\u8bb2\u7a76\u706b\u5019,\u4e0d\u53ef\u51fa\u552e",
+      intro: "\u767d\u7802\u7cd6\u71ac\u716e\u540e\u7126\u5316\u7684\u996e\u6599\u8c03\u5473\u54c1\uff0c\u5f88\u8bb2\u7a76\u706b\u5019\n\u4e0d\u53ef\u51fa\u552e",
       type: "item_raw",
-      sell: 0
+      sell: 0,
+      count: 3,
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      resPath: "img/raw/",
+      tagPrice: 6,
+      ROI: .046153846,
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": "",
+      "": ""
     } ];
     exports.RecipeModule = [ {
       name: "\u914d\u65b9",
@@ -19491,7 +19402,7 @@ window.__require = function e(t, n, r) {
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
-    exports.EOpenType = exports.ECloseType = exports.EPriority = exports.GetForm = exports.ModalType = void 0;
+    exports.ECloseType = exports.EPriority = exports.GetForm = exports.ModalType = void 0;
     const SysDefine_1 = require("./config/SysDefine");
     class ModalType {
       constructor(opacity = SysDefine_1.ModalOpacity.OpacityHalf, ClickMaskClose = false, IsEasing = true, EasingTime = .2) {
@@ -19538,12 +19449,6 @@ window.__require = function e(t, n, r) {
       ECloseType[ECloseType["CloseAndDestory"] = 1] = "CloseAndDestory";
       ECloseType[ECloseType["LRU"] = 2] = "LRU";
     })(ECloseType = exports.ECloseType || (exports.ECloseType = {}));
-    var EOpenType;
-    (function(EOpenType) {
-      EOpenType[EOpenType["OpenOnly"] = 0] = "OpenOnly";
-      EOpenType[EOpenType["OpenOnlyTp"] = 1] = "OpenOnlyTp";
-      EOpenType[EOpenType["OpenDefault"] = 2] = "OpenDefault";
-    })(EOpenType = exports.EOpenType || (exports.EOpenType = {}));
     cc._RF.pop();
   }, {
     "./config/SysDefine": "SysDefine"
@@ -20851,8 +20756,10 @@ window.__require = function e(t, n, r) {
     });
     const AdapterMgr_1 = require("./AdapterMgr");
     const FormMgr_1 = require("./FormMgr");
+    const ModalMgr_1 = require("./ModalMgr");
     const ResMgr_1 = require("./ResMgr");
     const Struct_1 = require("./Struct");
+    const UIManager_1 = require("./UIManager");
     class UIBase extends cc.Component {
       constructor() {
         super();
@@ -20860,7 +20767,6 @@ window.__require = function e(t, n, r) {
         this.formData = null;
         this.formType = null;
         this.closeType = null;
-        this.openType = Struct_1.EOpenType.OpenDefault;
         this._inited = false;
         this.view = null;
         this.model = null;
@@ -20897,14 +20803,27 @@ window.__require = function e(t, n, r) {
         });
       }
       onInit(params) {}
-      onShow(params) {}
-      onAfterShow(params) {}
-      onHide(params) {}
+      onShow(params) {
+        UIManager_1.default.getInstance()["_ndScreen"].pauseSystemEvents(true);
+        UIManager_1.default.getInstance()["_ndFixed"].pauseSystemEvents(true);
+        ModalMgr_1.default;
+      }
+      onAfterShow(params) {
+        this.node.parent.resumeSystemEvents(true);
+        this.node.parent.resumeAllActions();
+      }
+      onHide(params) {
+        UIManager_1.default.getInstance()["_ndScreen"].resumeSystemEvents(true);
+        UIManager_1.default.getInstance()["_ndFixed"].resumeSystemEvents(true);
+      }
       onAfterHide(params) {}
       closeSelf(params) {
         return __awaiter(this, void 0, void 0, function*() {
           return yield FormMgr_1.default.close(Struct_1.GetForm(this.fid, this.formType), params);
         });
+      }
+      get modelNode() {
+        return this.node.parent.getChildByName("UIModalNode");
       }
       showEffect() {
         return __awaiter(this, void 0, void 0, function*() {});
@@ -20933,8 +20852,10 @@ window.__require = function e(t, n, r) {
   }, {
     "./AdapterMgr": "AdapterMgr",
     "./FormMgr": "FormMgr",
+    "./ModalMgr": "ModalMgr",
     "./ResMgr": "ResMgr",
-    "./Struct": "Struct"
+    "./Struct": "Struct",
+    "./UIManager": "UIManager"
   } ],
   UIBuild_Auto: [ function(require, module, exports) {
     "use strict";
@@ -21351,7 +21272,6 @@ window.__require = function e(t, n, r) {
         this.formType = SysDefine_1.FormType.Window;
         this.modalType = new Struct_1.ModalType(SysDefine_1.ModalOpacity.OpacityFull);
         this.closeType = Struct_1.ECloseType.LRU;
-        this.openTyp = Struct_1.EOpenType.OpenOnlyTp;
       }
       showEffect() {
         return __awaiter(this, void 0, void 0, function*() {
@@ -21369,7 +21289,6 @@ window.__require = function e(t, n, r) {
         this.formType = SysDefine_1.FormType.Drawer;
         this.modalType = new Struct_1.ModalType(SysDefine_1.ModalOpacity.OpacityFull);
         this.closeType = Struct_1.ECloseType.CloseAndHide;
-        this.openTyp = Struct_1.EOpenType.OpenOnlyTp;
       }
       showEffect() {
         return __awaiter(this, void 0, void 0, function*() {
@@ -22174,6 +22093,7 @@ window.__require = function e(t, n, r) {
           ModalMgr_1.default.inst.checkModalWindow(this._windows);
           yield this.showEffect(com);
           com.onAfterShow(params);
+          ModalMgr_1.default.inst.uiModal.isPass = false;
         });
       }
       enterToDrawer(fid, params) {
@@ -22188,6 +22108,7 @@ window.__require = function e(t, n, r) {
           ModalMgr1_1.default.inst.checkModalWindow(this._drawers);
           yield this.showEffect(com);
           com.onAfterShow(params);
+          ModalMgr1_1.default.inst.uiModal.isPass = false;
         });
       }
       enterToTips(fid, params) {
@@ -22351,25 +22272,6 @@ window.__require = function e(t, n, r) {
     "use strict";
     cc._RF.push(module, "80f365N6pFApJ6MlMUc+H9D", "UIModalScript");
     "use strict";
-    var __extends = this && this.__extends || function() {
-      var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf || {
-          __proto__: []
-        } instanceof Array && function(d, b) {
-          d.__proto__ = b;
-        } || function(d, b) {
-          for (var p in b) Object.prototype.hasOwnProperty.call(b, p) && (d[p] = b[p]);
-        };
-        return extendStatics(d, b);
-      };
-      return function(d, b) {
-        extendStatics(d, b);
-        function __() {
-          this.constructor = d;
-        }
-        d.prototype = null === b ? Object.create(b) : (__.prototype = b.prototype, new __());
-      };
-    }();
     var __decorate = this && this.__decorate || function(decorators, target, key, desc) {
       var c = arguments.length, r = c < 3 ? target : null === desc ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
       if ("object" === typeof Reflect && "function" === typeof Reflect.decorate) r = Reflect.decorate(decorators, target, key, desc); else for (var i = decorators.length - 1; i >= 0; i--) (d = decorators[i]) && (r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r);
@@ -22402,118 +22304,28 @@ window.__require = function e(t, n, r) {
         step((generator = generator.apply(thisArg, _arguments || [])).next());
       });
     };
-    var __generator = this && this.__generator || function(thisArg, body) {
-      var _ = {
-        label: 0,
-        sent: function() {
-          if (1 & t[0]) throw t[1];
-          return t[1];
-        },
-        trys: [],
-        ops: []
-      }, f, y, t, g;
-      return g = {
-        next: verb(0),
-        throw: verb(1),
-        return: verb(2)
-      }, "function" === typeof Symbol && (g[Symbol.iterator] = function() {
-        return this;
-      }), g;
-      function verb(n) {
-        return function(v) {
-          return step([ n, v ]);
-        };
-      }
-      function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-          if (f = 1, y && (t = 2 & op[0] ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 
-          0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-          (y = 0, t) && (op = [ 2 & op[0], t.value ]);
-          switch (op[0]) {
-           case 0:
-           case 1:
-            t = op;
-            break;
-
-           case 4:
-            _.label++;
-            return {
-              value: op[1],
-              done: false
-            };
-
-           case 5:
-            _.label++;
-            y = op[1];
-            op = [ 0 ];
-            continue;
-
-           case 7:
-            op = _.ops.pop();
-            _.trys.pop();
-            continue;
-
-           default:
-            if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (6 === op[0] || 2 === op[0])) {
-              _ = 0;
-              continue;
-            }
-            if (3 === op[0] && (!t || op[1] > t[0] && op[1] < t[3])) {
-              _.label = op[1];
-              break;
-            }
-            if (6 === op[0] && _.label < t[1]) {
-              _.label = t[1];
-              t = op;
-              break;
-            }
-            if (t && _.label < t[2]) {
-              _.label = t[2];
-              _.ops.push(op);
-              break;
-            }
-            t[2] && _.ops.pop();
-            _.trys.pop();
-            continue;
-          }
-          op = body.call(thisArg, _);
-        } catch (e) {
-          op = [ 6, e ];
-          y = 0;
-        } finally {
-          f = t = 0;
-        }
-        if (5 & op[0]) throw op[1];
-        return {
-          value: op[0] ? op[1] : void 0,
-          done: true
-        };
-      }
-    };
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
-    var RenderUtil_1 = require("../Common/Utils/RenderUtil");
-    var CocosHelper_1 = require("./CocosHelper");
-    var UIManager_1 = require("./UIManager");
-    var WindowMgr_1 = require("./WindowMgr");
-    var SysDefine_1 = require("./config/SysDefine");
-    var BAN_FALG = cc.RenderFlow.FLAG_RENDER | cc.RenderFlow.FLAG_POST_RENDER;
-    var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-    var UIModalScript = function(_super) {
-      __extends(UIModalScript, _super);
-      function UIModalScript() {
-        var _this = null !== _super && _super.apply(this, arguments) || this;
-        _this.sprite = null;
-        _this.camera = null;
-        _this._texture = null;
-        _this._renderTexture = null;
-        _this._renderTextures = [];
-        return _this;
+    const RenderUtil_1 = require("../Common/Utils/RenderUtil");
+    const CocosHelper_1 = require("./CocosHelper");
+    const UIManager_1 = require("./UIManager");
+    const WindowMgr_1 = require("./WindowMgr");
+    const SysDefine_1 = require("./config/SysDefine");
+    const BAN_FALG = cc.RenderFlow.FLAG_RENDER | cc.RenderFlow.FLAG_POST_RENDER;
+    const {ccclass: ccclass, property: property} = cc._decorator;
+    let UIModalScript = class UIModalScript extends cc.Component {
+      constructor() {
+        super(...arguments);
+        this.sprite = null;
+        this.camera = null;
+        this.isPass = true;
+        this._texture = null;
+        this._renderTexture = null;
+        this._renderTextures = [];
       }
-      UIModalScript.prototype.init = function() {
-        var size = cc.view.getVisibleSize();
+      init() {
+        let size = cc.view.getVisibleSize();
         this.node.height = size.height;
         this.node.width = size.width;
         this.node.addComponent(cc.Button);
@@ -22523,156 +22335,120 @@ window.__require = function e(t, n, r) {
         this.node.color = new cc.Color(255, 255, 255);
         this.node.opacity = 0;
         this.node.active = false;
-      };
-      UIModalScript.prototype.showModal = function(lucenyType, time, isEasing, dualBlur) {
-        void 0 === time && (time = .6);
-        void 0 === isEasing && (isEasing = true);
-        void 0 === dualBlur && (dualBlur = false);
-        return __awaiter(this, void 0, void 0, function() {
-          var node, o;
-          return __generator(this, function(_a) {
-            switch (_a.label) {
-             case 0:
-              if (dualBlur) {
-                if (!this.camera) {
-                  node = new cc.Node("BlurCamera");
-                  this.camera = node.addComponent(cc.Camera);
-                  cc.find("Canvas").addChild(node);
-                }
-                this.useDualBlurSprite(this.camera);
-                this.node.color = cc.Color.WHITE;
-              } else if (lucenyType === SysDefine_1.ModalOpacity.GuassBlur) {
-                this.useBlurSprite(this.sprite);
-                lucenyType = SysDefine_1.ModalOpacity.OpacityFull;
-              } else {
-                this.useNormalSprite(this.sprite);
-                this.node.color = cc.Color.BLACK;
-              }
-              o = 0;
-              switch (lucenyType) {
-               case SysDefine_1.ModalOpacity.None:
-                this.node.active = false;
-                break;
-
-               case SysDefine_1.ModalOpacity.OpacityZero:
-                o = 0;
-                break;
-
-               case SysDefine_1.ModalOpacity.OpacityLow:
-                o = 63;
-                break;
-
-               case SysDefine_1.ModalOpacity.OpacityHalf:
-                o = 126;
-                break;
-
-               case SysDefine_1.ModalOpacity.OpacityHigh:
-                o = 189;
-                break;
-
-               case SysDefine_1.ModalOpacity.OpacityFull:
-                o = 255;
-              }
-              if (!this.node.active) return [ 2 ];
-              if (!isEasing) return [ 3, 2 ];
-              return [ 4, CocosHelper_1.default.runTweenSync(this.node, cc.tween().to(time, {
-                opacity: o
-              })) ];
-
-             case 1:
-              _a.sent();
-              return [ 3, 3 ];
-
-             case 2:
-              this.node.opacity = o;
-              _a.label = 3;
-
-             case 3:
-              return [ 2 ];
+      }
+      showModal(lucenyType, time = .6, isEasing = true, dualBlur = false) {
+        return __awaiter(this, void 0, void 0, function*() {
+          this.isPass = true;
+          if (dualBlur) {
+            if (!this.camera) {
+              let node = new cc.Node("BlurCamera");
+              this.camera = node.addComponent(cc.Camera);
+              cc.find("Canvas").addChild(node);
             }
-          });
-        });
-      };
-      UIModalScript.prototype.clickMaskWindow = function() {
-        return __awaiter(this, void 0, void 0, function() {
-          var com;
-          return __generator(this, function(_a) {
-            switch (_a.label) {
-             case 0:
-              com = UIManager_1.default.getInstance().getForm(this.fid);
-              if (!(com && com.modalType.clickMaskClose)) return [ 3, 2 ];
-              return [ 4, WindowMgr_1.default.close(this.fid) ];
+            this.useDualBlurSprite(this.camera);
+            this.node.color = cc.Color.WHITE;
+          } else if (lucenyType === SysDefine_1.ModalOpacity.GuassBlur) {
+            this.useBlurSprite(this.sprite);
+            lucenyType = SysDefine_1.ModalOpacity.OpacityFull;
+          } else {
+            this.useNormalSprite(this.sprite);
+            this.node.color = cc.Color.BLACK;
+          }
+          let o = 0;
+          switch (lucenyType) {
+           case SysDefine_1.ModalOpacity.None:
+            this.node.active = false;
+            break;
 
-             case 1:
-              _a.sent();
-              _a.label = 2;
+           case SysDefine_1.ModalOpacity.OpacityZero:
+            o = 0;
+            break;
 
-             case 2:
-              return [ 2 ];
-            }
-          });
+           case SysDefine_1.ModalOpacity.OpacityLow:
+            o = 63;
+            break;
+
+           case SysDefine_1.ModalOpacity.OpacityHalf:
+            o = 126;
+            break;
+
+           case SysDefine_1.ModalOpacity.OpacityHigh:
+            o = 189;
+            break;
+
+           case SysDefine_1.ModalOpacity.OpacityFull:
+            o = 255;
+          }
+          if (!this.node.active) return;
+          isEasing ? yield CocosHelper_1.default.runTweenSync(this.node, cc.tween().to(time, {
+            opacity: o
+          })) : this.node.opacity = o;
         });
-      };
-      UIModalScript.prototype.getSingleTexture = function() {
+      }
+      clickMaskWindow() {
+        return __awaiter(this, void 0, void 0, function*() {
+          let com = UIManager_1.default.getInstance().getForm(this.fid);
+          if (com && com.modalType.clickMaskClose && !this.isPass) {
+            console.log("\u5173\u95ed\u3002\u3002\u3002\u3002");
+            yield WindowMgr_1.default.close(this.fid);
+          }
+        });
+      }
+      getSingleTexture() {
         if (this._texture) return this._texture;
-        var data = new Uint8Array(16);
-        for (var i = 0; i < 2; i++) for (var j = 0; j < 2; j++) {
+        let data = new Uint8Array(16);
+        for (let i = 0; i < 2; i++) for (let j = 0; j < 2; j++) {
           data[2 * i * 4 + 4 * j + 0] = 255;
           data[2 * i * 4 + 4 * j + 1] = 255;
           data[2 * i * 4 + 4 * j + 2] = 255;
           data[2 * i * 4 + 4 * j + 3] = 255;
         }
-        var texture = new cc.Texture2D();
+        let texture = new cc.Texture2D();
         texture.name = "single color";
         texture.initWithData(data, cc.Texture2D.PixelFormat.RGBA8888, 2, 2);
         texture.handleLoadedTexture();
         this._texture = texture;
         texture.addRef();
         return this._texture;
-      };
-      UIModalScript.prototype.useNormalSprite = function(sprite) {
+      }
+      useNormalSprite(sprite) {
         sprite.sizeMode = cc.Sprite.SizeMode.CUSTOM;
         sprite.type = cc.Sprite.Type.SIMPLE;
         sprite.spriteFrame = new cc.SpriteFrame(this.getSingleTexture());
-      };
-      UIModalScript.prototype.useBlurSprite = function(sprite) {
+      }
+      useBlurSprite(sprite) {
         sprite.sizeMode = cc.Sprite.SizeMode.CUSTOM;
         sprite.type = cc.Sprite.Type.SIMPLE;
-        var data = RenderUtil_1.default.getPixelsData(cc.find("Canvas"), true);
-        var texture = new cc.Texture2D();
+        let data = RenderUtil_1.default.getPixelsData(cc.find("Canvas"), true);
+        let texture = new cc.Texture2D();
         texture.initWithData(data, cc.Texture2D.PixelFormat.RGBA8888, sprite.node.width, sprite.node.height);
         sprite.spriteFrame = new cc.SpriteFrame(texture);
-      };
-      UIModalScript.prototype.useDualBlurSprite = function(camera) {
-        var _this = this;
-        var dirtyNodes = [];
-        var disRenderChildren = function() {
-          var tips = UIManager_1.default.getInstance().getUIROOT().getChildByName(SysDefine_1.SysDefine.SYS_TOPTIPS_NODE).children;
-          for (var _i = 0, tips_1 = tips; _i < tips_1.length; _i++) {
-            var node = tips_1[_i];
+      }
+      useDualBlurSprite(camera) {
+        let dirtyNodes = [];
+        let disRenderChildren = () => {
+          let tips = UIManager_1.default.getInstance().getUIROOT().getChildByName(SysDefine_1.SysDefine.SYS_TOPTIPS_NODE).children;
+          for (const node of tips) {
             if (!node._activeInHierarchy || 0 == node.opacity) continue;
             node["_dirtyRenderFlag"] = node._renderFlag;
             node._renderFlag &= ~(cc.RenderFlow.FLAG_CHILDREN | cc.RenderFlow.FLAG_RENDER);
             dirtyNodes.push(node);
           }
-          _this.node._renderFlag &= ~cc.RenderFlow.FLAG_RENDER;
-          var windows = UIManager_1.default.getInstance().getUIROOT().getChildByName(SysDefine_1.SysDefine.SYS_POPUP_NODE).children;
-          for (var i = windows.length - 1; i >= 0; i--) if (windows[i].zIndex > _this.node.zIndex) {
-            var node = windows[i];
+          this.node._renderFlag &= ~cc.RenderFlow.FLAG_RENDER;
+          let windows = UIManager_1.default.getInstance().getUIROOT().getChildByName(SysDefine_1.SysDefine.SYS_POPUP_NODE).children;
+          for (let i = windows.length - 1; i >= 0; i--) if (windows[i].zIndex > this.node.zIndex) {
+            let node = windows[i];
             if (!node._activeInHierarchy || 0 == node.opacity) continue;
             node["_dirtyRenderFlag"] = node._renderFlag;
             node._renderFlag &= ~(cc.RenderFlow.FLAG_CHILDREN | cc.RenderFlow.FLAG_RENDER);
             dirtyNodes.push(node);
           }
         };
-        var rerenderChildren = function() {
-          for (var _i = 0, dirtyNodes_1 = dirtyNodes; _i < dirtyNodes_1.length; _i++) {
-            var node = dirtyNodes_1[_i];
-            node._renderFlag = node["_dirtyRenderFlag"];
-          }
+        let rerenderChildren = () => {
+          for (const node of dirtyNodes) node._renderFlag = node["_dirtyRenderFlag"];
         };
         if (!this._renderTexture) {
-          var renderTexture = this._renderTexture = new cc.RenderTexture();
+          let renderTexture = this._renderTexture = new cc.RenderTexture();
           renderTexture.initWithSize(cc.visibleRect.width, cc.visibleRect.height, cc.game._renderContext.STENCIL_INDEX8);
         }
         camera.enabled = true;
@@ -22684,12 +22460,12 @@ window.__require = function e(t, n, r) {
         this.sprite.markForRender(true);
         this.renderDualBlur(camera, 3);
         camera.enabled = false;
-      };
-      UIModalScript.prototype.renderDualBlur = function(camera, iterations) {
-        var size = cc.view.getVisibleSize();
-        if (this._renderTextures.length <= 0) for (var i = 0; i < iterations; i++) {
-          var r = Math.pow(2, i);
-          var renderTexture = new cc.RenderTexture();
+      }
+      renderDualBlur(camera, iterations) {
+        let size = cc.view.getVisibleSize();
+        if (this._renderTextures.length <= 0) for (let i = 0; i < iterations; i++) {
+          let r = Math.pow(2, i);
+          let renderTexture = new cc.RenderTexture();
           renderTexture.initWithSize(cc.visibleRect.width / r | 0, cc.visibleRect.height / r | 0);
           this._renderTextures.push(renderTexture);
         }
@@ -22699,7 +22475,7 @@ window.__require = function e(t, n, r) {
           MaterialDown.setProperty("v_offset", [ 4, 4 ]);
         }
         this.sprite.setMaterial(0, MaterialDown);
-        for (var i = 0; i < iterations; i++) {
+        for (let i = 0; i < iterations; i++) {
           camera.targetTexture = this._renderTextures[i];
           camera.render(this.sprite.node);
           this.sprite.spriteFrame.setTexture(camera.targetTexture);
@@ -22711,30 +22487,29 @@ window.__require = function e(t, n, r) {
           MaterialUp.setProperty("v_offset", [ 4, 4 ]);
         }
         this.sprite.setMaterial(0, MaterialUp);
-        for (var i = iterations - 1; i > 0; i--) {
+        for (let i = iterations - 1; i > 0; i--) {
           camera.targetTexture = this._renderTextures[i - 1];
           camera.render(this.sprite.node);
           this.sprite.spriteFrame.setTexture(camera.targetTexture);
           this.sprite.markForRender(true);
         }
         this.sprite.setMaterial(0, cc.Material.getBuiltinMaterial("2d-sprite"));
-      };
-      UIModalScript.prototype.genMaterial = function(effect) {
-        var asset = cc.deserialize(effect, {
+      }
+      genMaterial(effect) {
+        let asset = cc.deserialize(effect, {
           priority: 0,
           responseType: "json"
         });
         asset.onLoad && asset.onLoad();
         asset.__onLoadInvoked__ = true;
         return cc.Material.create(asset, 0);
-      };
-      UIModalScript = __decorate([ ccclass ], UIModalScript);
-      return UIModalScript;
-    }(cc.Component);
+      }
+    };
+    UIModalScript = __decorate([ ccclass ], UIModalScript);
     exports.default = UIModalScript;
-    var MaterialDown = null;
-    var MaterialUp = null;
-    var EFFECT_UP = {
+    let MaterialDown = null;
+    let MaterialUp = null;
+    const EFFECT_UP = {
       __type__: "cc.EffectAsset",
       _name: "BlurUp",
       _objFlags: 0,
@@ -22840,7 +22615,7 @@ window.__require = function e(t, n, r) {
         name: "BlurUp|vs|fs"
       } ]
     };
-    var EFFECT_DOWN = {
+    const EFFECT_DOWN = {
       __type__: "cc.EffectAsset",
       _name: "BlurDown",
       _objFlags: 0,
@@ -23163,13 +22938,13 @@ window.__require = function e(t, n, r) {
       value: true
     });
     const RawMaterial_1 = require("../Config/RawMaterial");
+    const TableKey_1 = require("../Config/TableKey");
     const RecipeItem_1 = require("../Game/Item/RecipeItem");
     const RecipeModuleItem_1 = require("../Game/Item/RecipeModuleItem");
+    const Game_1 = require("../Logic/Game");
     const Struct_1 = require("../UIFrame/Struct");
     const UIForm_1 = require("../UIFrame/UIForm");
     const SysDefine_1 = require("../UIFrame/config/SysDefine");
-    const Game_1 = require("../Logic/Game");
-    const TableKey_1 = require("../Config/TableKey");
     const {ccclass: ccclass, property: property} = cc._decorator;
     let UIRecipe = UIRecipe_1 = class UIRecipe extends UIForm_1.UIWindow {
       constructor() {
@@ -24110,6 +23885,15 @@ window.__require = function e(t, n, r) {
           data.state === MessageType_1.MessageType.RoleStand && 1 === data.id && this.node && this.node.active && this.startTalk();
         }, this);
       }
+      resetTalk() {
+        this.content.getComponent(Printer_1.Priter).beforeDestory();
+        this.content.getComponent(cc.Label).overflow = cc.Label.Overflow.NONE;
+        this.content.width = this.maxBoxWidth;
+        const pos = this.content.convertToWorldSpaceAR(cc.v2(0));
+        this.content.parent = this.box;
+        this.content.position = cc.v3(this.box.convertToNodeSpaceAR(pos));
+        this.talkNode.getComponent(cc.Layout).updateLayout();
+      }
       startTalk() {
         const role = RoleMgr_1.default.ins.firstRole;
         this.changeRoleState(true);
@@ -24133,6 +23917,7 @@ window.__require = function e(t, n, r) {
       }
       clearMenu() {
         this.coffeeNode && this.coffeComp.init();
+        this.resetTalk();
         this.dragIndex = -1;
         this.dragMenuItem = null;
         this.dragItem = null;
@@ -24359,6 +24144,7 @@ window.__require = function e(t, n, r) {
       }
       set talkContent(str) {
         console.log(this);
+        this.content.getComponent(Printer_1.Priter).beforeDestory();
         const pos = this.talkNode.position;
         const layout = this.talkNode.getComponent(cc.Layout);
         layout.spacingY = this.layoutOffsetY;
@@ -24366,12 +24152,12 @@ window.__require = function e(t, n, r) {
         this.talkNode.position = cc.v3(pos.x, this.talkPosY, pos.z);
         let col = new cc.Color(255, 255, 255, 255);
         cc.Color.fromHEX(col, "#FEF3DE");
-        this.content.color = col;
         this.content.getComponent(cc.Label).overflow = cc.Label.Overflow.RESIZE_HEIGHT;
-        this.content.parent = this.box;
         this.content.width = this.maxBoxWidth;
         this.content.getComponent(cc.Label).string = str;
         this.content.getComponent(cc.Label)["_forceUpdateRenderData"]();
+        this.content.color = col;
+        this.content.parent = this.box;
         if (this.content.height < this.boxHeight) this.content.getComponent(cc.Label).overflow = cc.Label.Overflow.NONE; else {
           let num = Math.floor(this.content.height / this.boxHeight);
           layout.spacingY = (num + 1) * this.layoutOffsetY + num + 1;
@@ -24385,7 +24171,7 @@ window.__require = function e(t, n, r) {
           cc.Color.fromHEX(col, "#000000");
           this.content.color = col;
           this.content.getComponent(Printer_1.Priter).showLabelPrinter(str);
-        }, .3);
+        }, .1);
       }
     };
     __decorate([ property(cc.Prefab) ], UIWorkDesk.prototype, "coffee", void 0);
